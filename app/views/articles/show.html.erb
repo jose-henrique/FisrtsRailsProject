@@ -1,0 +1,28 @@
+<h1><%= @article.title %></h1>
+<p><%= @article.body %></p>
+
+<ul>
+    <li>
+        <%= link_to 'Home', root_path%>
+    </li>
+    <li>
+        <%=  link_to 'Edit', edit_article_path(@article) %>
+    </li>
+    <%= turbo_include_tags %>
+    <li><%= link_to "Destroy", article_path(@article), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+</ul>
+
+<h2>Comments</h2>
+<%if @article.comments.length > 0%>
+    <%= render @article.comments%>
+<%else%>
+    <p>Nothing to show, for now :(</p>
+<%end%>
+
+
+<h2>Add a comment</h2>
+
+<%= render 'comments/form'%>
