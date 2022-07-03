@@ -10,20 +10,19 @@
                 <%end%>
             </ul>
         </div>
-        <div class="FormContainer">
-            <%= form.label :name %>
-            <%= form.text_field :name %>
-            
-            <%= form.label :email %>
-            <%= from.text_field :email %>
-            
-            <%= form.label :password %>
-            <%= form.text_field :password %>
-            
-            <%= form.label :password_confirmation %>
-            <%= form.text_field :password_confirmation %>
-            
-            <%= form.submit "Sign Up" %>
-        </div>
     <%end%>
+    <div class="FormContainer">
+        <%= form.label :name %>
+        <%= form.text_field :name %>
+            
+            
+        <%= form.label :password %>
+        <%= form.password_field :password %>
+            
+        <%= form.label :password_confirmation %>
+        <%= form.password_field :password_confirmation %>
+        
+        <%= form.submit "Sign Up" %>
+    </div>
+    
 <%end%>

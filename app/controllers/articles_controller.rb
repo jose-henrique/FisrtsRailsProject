@@ -14,9 +14,6 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    puts "=-"*20
-    puts params[:article]
-    puts "=-"*20
     
     @article = Article.new(article_params)
 
