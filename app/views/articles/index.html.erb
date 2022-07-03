@@ -1,16 +1,39 @@
-<h1>Artilces</h1>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="../../assets/stylesheets/ArticleStyle/indexPage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
 
-<h3>Our blog have <%=Article.public_count %> articles</h3>
+<header>
+    <strong id="title">My Blog</strong>
+    <%= link_to "New Article", new_article_path%>
+</header>
 
-<ul>
-    <%@articles.each do |article| %>
-        <% unless article.archived? %>
-            <li>
-                <%= link_to article.title, article %>
-            </li>
+<div class="main-container">
+    <div class="subtitle">
+        <h2>Artilces</h2>
+        <strong>Our blog have <span><%=Article.public_count %></span> articles</strong>
+    </div>
+
+    <div class="cardsContainer">
+        <%@articles.each do |article| %>
+            <% unless article.archived? %>
+                <div class="card">
+                    <div class="topArea">
+                        <%= link_to article.title, article, class: "title" %>
+                    </div>
+                    
+                    <div class="contentArea">
+                        <%= article.body%>
+                    </div>
+                    
+                </div>
+            <%end%>
         <%end%>
-    <%end%>
-</ul>
+    </div>
+</div>
 
-<%= link_to "New Article", new_article_path%>
+
 
