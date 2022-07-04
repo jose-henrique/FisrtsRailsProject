@@ -1,18 +1,21 @@
-<%unless comment.archived?%>
-    <p>
-        <strong>Commenter:</strong>
-        <%= comment.commenter%>
-    </p>
+<head>
+    <link rel="stylesheet" href="../../assets/stylesheets/comments/commentStyle.css">
+</head>
 
-    <p>
-        <strong>Comment:</strong>
-        <%= comment.body%>
-    </p>
-    <p>
+<div class="commentCard">
+    <%unless comment.archived?%>
+        <div class="contentArea">
+            <div class="commenter">
+            <strong><%= comment.commenter%></strong>
+            </div>
+            <div class="commentBody">
+                <%= comment.body%>
+            </div>
+        </div>
         <%= turbo_include_tags %>
         <%= link_to 'Delete Comment', [comment.article, comment], data: {
             turbo_method: :delete,
             turbo_confirm: "Are you sure?"
-        }%>
-    </p>
-<%end%>
+        }, class: "deleteLink"%>
+    <%end%>
+</div>

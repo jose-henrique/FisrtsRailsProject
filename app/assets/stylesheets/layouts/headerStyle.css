@@ -1,0 +1,42 @@
+header {
+    background-color: #48F571;
+    width: 100%;
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    margin-top: -8px;
+}
+
+header .linkClass{
+    text-decoration: none;
+    background-color: #F54756;
+    padding: 6px;
+
+    text-align: center;
+    line-height: 30px;
+
+    border-radius: 20px;
+    color: #eaeaea;
+
+    transition: 0.3s;
+    margin-right: 25px;
+}
+
+
+header .linkClass:hover {
+    color: #1a1a1a;
+    background-color: #b93741;
+}
+
+
+header .title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #F54756;
+    text-decoration: none;
+
+    margin-left: 80px;
+}

@@ -1,28 +1,43 @@
-<h1><%= @article.title %></h1>
-<p><%= @article.body %></p>
+<head>
+    <link rel="stylesheet" href="../../assets/stylesheets/ArticleStyle/ShowPage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
 
-<ul>
-    <li>
-        <%= link_to 'Home', root_path%>
-    </li>
-    <li>
-        <%=  link_to 'Edit', edit_article_path(@article) %>
-    </li>
-    <%= turbo_include_tags %>
-    <li><%= link_to "Destroy", article_path(@article), data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "Are you sure?"
-                  } %></li>
-</ul>
+<body>
+    <%= render "layouts/header" %>
+    <div class="mainContainer">
+        <div class="postArea">
+            <div class="contentArea">
+                <div class="topArea">
+                    <h1><%= @article.title %></h1>
+                </div>
+                <p class="postContent"><%= @article.body %></p>
+            </div>
+            <div class="menuArea">
+                <%=  link_to 'Edit', edit_article_path(@article), class: "menuLink" %>
+                <%= turbo_include_tags %>
+                <%= link_to "Delete Post", article_path(@article), data: {
+                                turbo_method: :delete,
+                                turbo_confirm: "Are you sure?"
+                            }, class: "menuLink" %>
+            </div>
+        </div>
+        <div class="commentArea">
 
-<h2>Comments</h2>
-<%if @article.comments.length > 0%>
-    <%= render @article.comments%>
-<%else%>
-    <p>Nothing to show, for now :(</p>
-<%end%>
+            <h2 class="commentsTitle">Comments</h2>
+            <%if @article.comments.length > 0%>
+                <%= render @article.comments%>
+            <%else%>
+                <p>Nothing to show, for now :(</p>
+            <%end%>
+        </div>
 
+        <div class="formArea">
+            <h2>Add a comment</h2>
 
-<h2>Add a comment</h2>
-
-<%= render 'comments/form'%>
+            <%= render 'comments/form'%>
+        </div>
+    </div>
+</body>

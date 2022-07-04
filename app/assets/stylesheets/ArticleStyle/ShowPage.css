@@ -1,0 +1,41 @@
+.mainContainer {
+    margin-top: 100px;
+    width: 90%;
+    background-color: #fefefe;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mainContainer .postArea {
+    width: 90%;
+    border-bottom: 1px solid gray;
+    padding-bottom: 5px;
+}
+
+.mainContainer .postArea .contentArea {
+    width: 100%;
+
+}
+
+.mainContainer .postArea .contentArea .topArea {
+    width: 100%;
+    border-bottom: 1px solid gray;
+}
+
+.mainContainer .postArea .contentArea .menuArea .menuLink{
+    text-decoration: none;
+    padding: 6px;
+
+    background-color: #F54756;
+}
+
+.mainContainer .commentArea{
+    width: 90%;
+    overflow-y: auto;
+}
+
+.mainContainer .formArea{
+    width: 90%;
+}

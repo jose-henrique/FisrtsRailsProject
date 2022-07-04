@@ -1,0 +1,46 @@
+.commentCard {
+    width: 90%;
+    height: 20%;
+
+    border-radius: 20px;
+    border: 1px solid #48F571;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 10px;
+}
+
+.commentCard .contentArea{
+    width: 100%;
+}
+
+.commentCard .commenter {
+    width: 80%;
+    height: 30%;
+}
+
+.commentCard .commenter strong {
+    margin-left: 20px;
+}
+
+.commentCard  .commentBody {
+    margin-left: 20px;
+}
+
+.commentCard .deleteLink{
+    text-decoration: none;
+
+    background-color: #F54756;
+    border-radius: 20px;
+    padding: 6px;
+
+    color: #fefefe;
+
+    margin-bottom: 5px;
+    transition: 0.4s;
+}
+
+.commentCard .deleteLink:hover{
+    background-color: #ca3844;
+}

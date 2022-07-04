@@ -1,12 +1,14 @@
+<head>
+    <link rel="stylesheet" href="../../assets/stylesheets/layouts/headerStyle.css">
+</head>
 <header>
-    <strong id="title">My Blog</strong>
-    <%if logged_in?%>
-        <p>você está logado</p>
-        <%= turbo_include_tags %>
-        <%= link_to "sair", sign_out_path , data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "Log out?"
-                  }%>
-    <%end%>
-    <%= link_to "New Article", new_article_path%>
+    <%= link_to 'Mini Blogs', root_path, class: "title"%>
+    <div class="actionArea">
+        <%if logged_in?%>
+            <%= link_to "Profile", user_path(current_user), class: "linkClass"%>
+        <%else%>
+            <%= link_to "Sign In", sign_in_path, class: "linkClass"%>
+        <%end%>
+        <%= link_to "New Article", new_article_path, class: "linkClass"%>
+    </div>
 </header>

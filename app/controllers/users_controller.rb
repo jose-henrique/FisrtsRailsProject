@@ -32,6 +32,7 @@ class UsersController < ApplicationController
       redirect_to users_path
     else
       render :edit
+    end
   end
 
   def destroy
