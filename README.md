@@ -9,10 +9,12 @@ the first steps have been taken:
 
 Now the features that i want to add:
 - [X] User authentication system, with encrypted passowrd.
+- [x] Add owners To Articles
 - [ ] User Permissions.
-- [ ] Like and dislike system.
 - [ ] stylize all pages.
 
-and the last step
+and the last step(if possible)
 - [ ] deploy apllication on heroku.
+
+if I don't get it, i did my best :)
 

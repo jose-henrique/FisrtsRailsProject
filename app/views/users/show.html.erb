@@ -1,5 +1,40 @@
-<h1>Profile Page</h1>
-
-<h1>Hi, <%= @user.name%></h1>
-
-<p>teste<%= @user.password_digest %></p>
+<head>
+    <link rel="stylesheet" href="../../assets/stylesheets/UserStyles/showPage.css">
+</head>
+<body>
+    <header class="profileHeader">
+        <div class="logoArea">
+            <h1><%= link_to "Mini Blogs", root_path, class: "logo" %></h1>
+        </div>
+        <div class="contentArea">
+            <%unless logged_in?%>
+                <%= link_to "Sign In", sign_in_path, class: "linkClass"%>
+            <%else%>
+                <% if current_user.id == params[:id].to_i%>
+                    <span>Hi, <%= @user.name%></span>
+                    <%= turbo_include_tags %>
+                    <%= link_to "LogOut", sign_out_path, data: {
+                        turbo_method: :delete,
+                        turbo_confirm: "Are you sure?"
+                    }, class: "logOut" %>
+                <%end%>
+            <%end%>
+        </div>
+    </header>
+    <div class="mainConteinr">
+        <h2>Articles from <%= @user.name %></h2>
+        <div class="Articles">
+            <% articles = Article.where(user_id: params[:id])%>
+            <% articles.each do |article| %>
+                <div class="ArticleCard">
+                    <div class="topArea">
+                        <span><%= link_to article.title, article, class: "title" %></span>
+                    </div>
+                    <div class="contentArea">
+                        <p><%=article.body%></p>
+                    </div>
+                </div>
+            <%end%>
+        </div>
+    </div>
+</body>

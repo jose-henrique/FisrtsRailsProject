@@ -1,0 +1,102 @@
+.profileHeader .logoArea{
+    margin-left: 20px;
+}
+
+.profileHeader .logoArea .logo{
+    color: #F54756;
+    font-size: 40px;
+    text-decoration: none;
+}
+
+.profileHeader .contentArea{
+    margin-right: 20px;
+}
+
+
+
+.profileHeader .contentArea span {
+    font-size: 20px;
+}
+
+.profileHeader .contentArea .logOut{
+    text-decoration: none;
+    padding: 7px;
+    background-color: #F54756;
+
+    border-radius: 20px;
+    color: #fefefe;
+
+    transition: 0.3s;
+}
+
+.profileHeader .contentArea .logOut:hover{
+    color: #b0b0b0;
+}
+
+.mainConteinr {
+    margin-top: 100px;
+    width: 95%;
+    padding-bottom: 20px;
+    background-color: #fefefe;
+}
+
+.mainConteinr h2 {
+    padding-bottom: 6px;
+    width: 100%;
+
+    margin-left: 20px;
+}
+
+.mainConteinr .Articles{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mainConteinr .Articles .ArticleCard {
+    width: 80%;
+    height: 100px;
+    border: 1px solid #F54756;
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+
+    margin-top: 15px;
+}
+
+.mainConteinr .Articles .ArticleCard .topArea {
+    margin-top: 10px;
+    width: 97%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    border-bottom: 1px solid gray;
+
+    padding-bottom: 5px;
+}
+
+.mainConteinr .Articles .ArticleCard .topArea .title{
+    margin-left: 10px;
+    
+    
+    text-decoration: none;
+    color: #F54756;
+    font-size: 20px;
+
+    transition: 0.3s;
+}
+
+.mainConteinr .Articles .ArticleCard .topArea .title:hover{
+    color: #a5333c;
+    text-decoration: underline;
+}
+
+.mainConteinr .Articles .ArticleCard .contentArea{
+    width: 97%;
+    overflow-y: hidden;
+}

@@ -12,7 +12,9 @@
             <div class="contentArea">
                 <div class="topArea">
                     <h1><%= @article.title %></h1>
-                    <span>Owner: <strong><%= get_user(@article.user_id).name %></strong></span>
+                    <%if @article.user_id%>
+                        <span>Owner: <strong><%= get_user(@article.user_id).name %></strong></span>
+                    <%end%>
                 </div>
                 <p class="postContent"><%= @article.body %></p>
             </div>

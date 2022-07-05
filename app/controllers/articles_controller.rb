@@ -50,7 +50,7 @@ class ArticlesController < ApplicationController
 
   private
     def article_params
-      puts params[:article][:user_id] = current_user.id
+      params[:article][:user_id] = current_user.id
       params.require(:article).permit(:title, :body, :status, :user_id)
     end
   
