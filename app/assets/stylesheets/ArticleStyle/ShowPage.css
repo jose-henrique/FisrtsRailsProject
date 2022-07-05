@@ -14,6 +14,17 @@
     padding-bottom: 5px;
 }
 
+.mainContainer .postArea .topArea{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mainContainer .postArea .topArea span {
+    margin-right: 15px;
+}
+
 .mainContainer .postArea .contentArea {
     width: 100%;
 

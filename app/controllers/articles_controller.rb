@@ -14,7 +14,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    
+    puts article_params
     @article = Article.new(article_params)
 
     if @article.save
@@ -50,7 +50,8 @@ class ArticlesController < ApplicationController
 
   private
     def article_params
-      params.require(:article).permit(:title, :body, :status)
+      puts params[:article][:user_id] = current_user.id
+      params.require(:article).permit(:title, :body, :status, :user_id)
     end
   
 end
