@@ -12,6 +12,8 @@
             <div class="contentArea">
                 <div class="topArea">
                     <h1><%= @article.title %></h1>
+                    <span><%= @sizeBody %> palavras</span>
+                    <span>average time to read: <%= @averageTime %> minutos </span>
                     <%if @article.user_id%>
                         <span>Owner: <strong><%= get_user(@article.user_id).name %></strong></span>
                     <%end%>
